@@ -1,0 +1,29 @@
+<h1>Listing lots of corgis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @corgis.each do |corgi| %>
+      <tr>
+        <td><%= corgi.name %></td>
+        <td><%= image_tag corgi.image_url, :size => "200x200"  %></td>
+        <td><%= link_to 'Show', corgi %></td>
+        <td><%= link_to 'Edit', edit_corgi_path(corgi) %></td>
+        <td><%= link_to 'Destroy', corgi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Corgi', new_corgi_path %>

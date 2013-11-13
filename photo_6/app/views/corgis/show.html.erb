@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @corgi.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@corgi.image_url, :width =>200, :height=>200) %>
+</p>
+
+<%= link_to 'Edit', edit_corgi_path(@corgi) %> |
+<%= link_to 'Back', corgis_path %>
